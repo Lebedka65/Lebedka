@@ -11,8 +11,8 @@ then
 pkg install python
 pkg install dos2unix
 pip install requests colorama proxyscrape
-cp ~/spymer/spammer.py $PREFIX/bin/spymer
-dos2unix $PREFIX/bin/spymer
-chmod -R 777 ~/spymer
-chmod 777 $PREFIX/bin/spymer
-spymer
+cp ~/Lebedka/spamer.py $PREFIX/bin/spamer
+dos2unix $PREFIX/bin/spamer
+chmod -R 777 ~/spamer
+chmod 777 $PREFIX/bin/spamer
+spamer
