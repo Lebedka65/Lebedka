@@ -16,7 +16,7 @@ then
         chmod -R 777 ~/spamer
         chmod 777 $PREFIX/bin/spamer
         spamer
-        else
+        fi
                         
                      
                 
